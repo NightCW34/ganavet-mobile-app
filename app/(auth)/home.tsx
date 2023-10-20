@@ -1,6 +1,7 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { useUser } from "@clerk/clerk-expo";
+import Consultas from "./screens/Consultas";
 
 const Home = () => {
   const { user } = useUser();

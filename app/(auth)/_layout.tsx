@@ -42,7 +42,22 @@ const TabsPage = () => {
         }}
         redirect={!isSignedIn}
       />
+      <Tabs.Screen
+        name="Venta"
+        options={{
+          headerTitle: "Venta",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="star" size={size} color={color} />
+          ),
+          tabBarLabel: "Venta",
+        }}
+        redirect={!isSignedIn}
+      />
+      
+
     </Tabs>
+
+
   );
 };
 
