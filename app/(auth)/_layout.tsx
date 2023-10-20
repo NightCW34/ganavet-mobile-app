@@ -1,4 +1,4 @@
-import { Redirect, Tabs } from "expo-router";
+import { Tabs, router, Redirect } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { Pressable } from "react-native";
 import { useAuth } from "@clerk/clerk-expo";
@@ -6,9 +6,8 @@ import { useAuth } from "@clerk/clerk-expo";
 export const LogoutButton = () => {
   const { signOut } = useAuth();
 
-  const doLogout = async () => {
-    await signOut();
-    <Redirect href="/login" />;
+  const doLogout = () => {
+    signOut();
   };
 
   return (
@@ -21,14 +20,18 @@ export const LogoutButton = () => {
 const TabsPage = () => {
   const { isSignedIn } = useAuth();
 
+  // Redirect to the login screen if the user is not signed in.
+  if (!isSignedIn) {
+    return <Redirect href="/login" />;
+  }
+
   return (
     <Tabs
       screenOptions={{
         headerStyle: {
-          backgroundColor: "#04942f",
+          backgroundColor: "#6c47ff",
         },
         headerTintColor: "#fff",
-        headerRight: () => <LogoutButton />,
       }}
     >
       <Tabs.Screen
@@ -40,8 +43,18 @@ const TabsPage = () => {
           ),
           tabBarLabel: "Home",
         }}
-        redirect={!isSignedIn}
       />
+      {/* <Tabs.Screen
+        name="profile"
+        options={{
+          headerTitle: "My Profile",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="person-outline" size={size} color={color} />
+          ),
+          tabBarLabel: "My Profile",
+          headerRight: () => <LogoutButton />,
+        }}
+      /> */}
     </Tabs>
   );
 };
