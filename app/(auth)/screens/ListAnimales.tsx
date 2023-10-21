@@ -107,35 +107,14 @@ const ListAnimales = () => {
         },
       ]);
       
-
+      const URL = 'http://localhost:3000/registro-animales';
       const getAnimales = async () => {
-        try {
-          const response = await fetch('http://localhost:3000/registro-animales');
-          console.log(response);
-          if (!response.ok) {
-            // Maneja el caso en el que la respuesta no sea exitosa (código de estado diferente a 200)
-            throw new Error('Error en la solicitud. Código de estado: ' + response.status);
-          }
+        const response = await fetch(URL);
+
+        const data = await response.json();
+        setAnimales(data.data);
       
-          const data = await response.json();
-          setAnimales(data);
-        } catch (error) {
-      
-          console.error('Error en la solicitud GET:', error);
-      
-        
-          if (error instanceof TypeError) {
-           
-            console.error('Error de red. Asegúrate de que el servidor esté en ejecución.');
-          } else if (error instanceof SyntaxError) {
-           
-            console.error('Error de análisis JSON. La respuesta del servidor no es válida.');
-          } else {
-           
-            console.error('Ocurrió un error inesperado. Comprueba la consola para obtener más detalles.');
-          }
-        }
-      };
+    };
       
 
       getAnimales();
@@ -148,7 +127,7 @@ const ListAnimales = () => {
         animales.map(animal => (
           <View key={animal.id} style={styles.animalContainer}>
             <Image
-              source={require('../../../components/Images/imagen.jpeg')} // Reemplaza "animal.imagen" con la fuente de la imagen real
+              source={require('../../../components/Images/imagen24.jpeg')} // Reemplaza "animal.imagen" con la fuente de la imagen real
               style={styles.animalImage}
             />
             <View style={styles.infoContainer}>
