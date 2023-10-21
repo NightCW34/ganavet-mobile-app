@@ -23,9 +23,9 @@ const Home = () => {
             onPress={() => {}}
           />
         </Link>
-        <Link href={"/screens/nutrition"} asChild>
+        <Link href={"/menu/nutritionAnimal"} asChild>
           <ButtonCardComponent
-            label={"Concentrado"}
+            label={"Crear concentrado"}
             imageSource={require("../../assets/images/icon-2.png")}
             onPress={() => {}}
           />
