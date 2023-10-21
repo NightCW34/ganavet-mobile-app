@@ -32,17 +32,7 @@ const TabsPage = () => {
         headerRight: () => <LogoutButton />,
       }}
     >
-      <Tabs.Screen
-        name="home"
-        options={{
-          headerTitle: "Home",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home-outline" size={size} color={color} />
-          ),
-          tabBarLabel: "Home",
-        }}
-        redirect={!isSignedIn}
-      />
+
       <Tabs.Screen
         name="screens/Venta"
         options={{
@@ -62,6 +52,17 @@ const TabsPage = () => {
             <Ionicons name="chatbox-ellipses-outline" size={size} color={color} />
           ),
           tabBarLabel: "Consultas",
+        }}
+        redirect={!isSignedIn}
+      />
+            <Tabs.Screen
+        name="home"
+        options={{
+          headerTitle: "Home",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="home-outline" size={size} color={color} />
+          ),
+          tabBarLabel: "Home",
         }}
         redirect={!isSignedIn}
       />
