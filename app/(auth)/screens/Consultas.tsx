@@ -8,48 +8,37 @@ const Consultas = () => {
     const [loading, setLoading] = useState(true);
     const [showOptions, setShowOptions] = useState(false);
     const [searchQuery, setSearchQuery] = useState(''); // State for the search query
-
     useEffect(() => {
-        setMessages([
-            {
-                _id: 1,
-                text: 'Hola, estoy programando una consulta veterinaria para mi perro. No se siente bien.',
-                createdAt: new Date(),
-                user: {
+        const initializeChat = () => {
+            const initialMessages = [
+                {
                     _id: 1,
-                    name: 'Veterinario',
+                    text: 'Hola, estoy programando una consulta veterinaria para mi perro. No se siente bien.',
+                    createdAt: new Date(),
+                    user: {
+                        _id: 1,
+                        name: 'Veterinario',
+                    },
                 },
-            },
-            {
-                _id: 2,
-                text: '¡Hola! Claro, estoy aquí para ayudarte. ¿Podemos agendar una consulta para mañana a las 10 a. m.?',
-                createdAt: new Date(),
-                user: {
+                {
                     _id: 2,
-                    name: 'Dueño de la Mascota',
+                    text: '¡Hola! Claro, estoy aquí para ayudarte. ¿Podemos agendar una consulta para mañana a las 10 a. m.?',
+                    createdAt: new Date(),
+                    user: {
+                        _id: 2,
+                        name: 'Dueño de la Mascota',
+                    },
                 },
-            },
-            {
-                _id: 2,
-                text: '¡Perfecto! Agendaré la consulta para mañana a las 10 a. m. ¿Hay alguna información adicional que deba saber?',
-                createdAt: new Date(),
-                user: {
-                    _id: 1,
-                    name: 'Dueño de la Mascota',
-                },
-            },
-            {
-                _id: 1,
-                text: 'No, eso es todo. ¡Gracias!',
-                createdAt: new Date(),
-                user: {
-                    _id: 1,
-                    name: 'Dueño de la Mascota',
-                },
-            },
-        ]);
-        setLoading(false);
+            ];
+    
+            setMessages(initialMessages);
+            setLoading(false);
+        };
+    
+        // Llama a la función de inicialización al cargar el componente
+        initializeChat();
     }, []);
+    
 
     return (
         <View style={{ flex: 1, flexDirection: 'column' }}>
