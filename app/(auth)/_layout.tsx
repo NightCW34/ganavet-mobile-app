@@ -48,7 +48,7 @@ const TabsPage = () => {
         options={{
           headerTitle: "Venta",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home-outline" size={size} color={color} />
+            <Ionicons name="stats-chart-outline" size={size} color={color} />
           ),
           tabBarLabel: "Venta",
         }}
@@ -59,7 +59,7 @@ const TabsPage = () => {
         options={{
           headerTitle: "Consultas",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="star" size={size} color={color} />
+            <Ionicons name="chatbox-ellipses-outline" size={size} color={color} />
           ),
           tabBarLabel: "Consultas",
         }}
@@ -70,7 +70,7 @@ const TabsPage = () => {
         options={{
           headerTitle: "RegistroBovino",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="star" size={size} color={color} />
+            <Ionicons name="document-outline" size={size} color={color} />
           ),
           tabBarLabel: "RegistroBovino",
         }}
@@ -81,7 +81,7 @@ const TabsPage = () => {
           options={{
             headerTitle: "ListAnimales",
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="star" size={size} color={color} />
+              <Ionicons name="list-outline" size={size} color={color} />
             ),
             tabBarLabel: "ListAnimales",
           }}
