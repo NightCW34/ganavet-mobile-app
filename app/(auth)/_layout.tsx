@@ -2,8 +2,8 @@ import React from "react";
 import { Tabs, Redirect } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { Pressable } from "react-native";
-import { useAuth } from "@clerk/clerk-expo";
-
+import { useAuth ,useUser} from "@clerk/clerk-expo";
+import Venta from "./screens/Venta";
 export const LogoutButton = () => {
   const { signOut } = useAuth();
 
@@ -45,7 +45,7 @@ const TabsPage = () => {
           </Text>
         ),
         headerRight: () => <LogoutButton />,
-      }}
+      }} 
     >
 
       <Tabs.Screen
