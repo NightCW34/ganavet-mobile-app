@@ -12,12 +12,12 @@ const Home = () => {
   const buttonData = [
     {
       key: "1",
-      label: "Botón 1",
+      label: "Sugerencias",
       imageSource: require("../../assets/images/icon-1.png"), // Proporciona la fuente de imagen para el botón 1
     },
     {
       key: "2",
-      label: "Botón 2",
+      label: "Calendario",
       imageSource: require("../../assets/images/icon-2.png"), // Proporciona la fuente de imagen para el botón 2
     },
     {
