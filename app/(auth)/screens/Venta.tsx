@@ -113,7 +113,7 @@ const RegistroBovino = () => {
                 onChangeText={setEdad}
                 icon="account"
             />
-            <Button  title="Registrar" onPress={handleSubmit}  />
+            <Button  title="Registrar Venta" onPress={handleSubmit}  />
         </ScrollView>
     );
 }
