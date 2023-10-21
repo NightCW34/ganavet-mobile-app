@@ -54,56 +54,56 @@ const RegistroBovino = () => {
                 placeholder="Foto de Fierro"
                 value={foto}
                 onChangeText={setFoto}
-                icon="account"
+                icon="picture-in-picture-bottom-right"
             />
             <StyledTextInput
                 label="Foto de Animal"
                 placeholder="Foto de Animal"
                 value={foto}
                 onChangeText={setFoto}
-                icon="account"
+                icon="picture-in-picture-bottom-right"
             />
             <StyledTextInput
                 label="Numero de Arete"
                 placeholder="Numero Arete"
                 value={numeroArete}
                 onChangeText={setNumeroArete}
-                icon="account"
+                icon="numeric"
             />
             <StyledTextInput
                 label="Nombre"
                 placeholder="Nombre"
                 value={nombre}
                 onChangeText={setNombre}
-                icon="account"
+                icon="text"
             />
             <StyledTextInput
                 label="Producto"
                 placeholder="Producto"
                 value={producto}
                 onChangeText={setProducto}
-                icon="account"
+                icon="text"
             />
             <StyledTextInput
                 label="Precio"
                 placeholder="Precio"
                 value={precio}
                 onChangeText={setPrecio}
-                icon="account"
+                icon="numeric"
             />
             <StyledTextInput
                 label="Descripcion de Venta"
                 placeholder="Descripcion de Venta"
                 value={descripcionVenta}
                 onChangeText={setDescripcionVenta}
-                icon="account"
+                icon="text"
             />
             <StyledTextInput
                 label="Proposito de Venta"
                 placeholder="Proposito de Venta"
                 value={propositoVenta}
                 onChangeText={setPropositoVenta}
-                icon="account"
+                icon="text"
             />
 
             <StyledTextInput
@@ -111,7 +111,7 @@ const RegistroBovino = () => {
                 placeholder="Edad"
                 value={edad}
                 onChangeText={setEdad}
-                icon="account"
+                icon="numeric"
             />
             <Button  title="Registrar Venta" onPress={handleSubmit}  />
         </ScrollView>
