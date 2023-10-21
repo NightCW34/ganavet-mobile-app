@@ -1,10 +1,14 @@
 import { View, Text, Dimensions } from "react-native";
 import React from "react";
 import { useUser } from "@clerk/clerk-expo";
+
 import { LineChart } from "react-native-chart-kit";
 import { SafeAreaView } from "react-native-safe-area-context";
 import HorizontalButtonScroll from "../../components/Elements/HorizontalSlide";
 import RegularText from "../../components/Texts/RegularText";
+
+import Consultas from "./screens/Consultas";
+
 
 const Home = () => {
   const { user } = useUser();
