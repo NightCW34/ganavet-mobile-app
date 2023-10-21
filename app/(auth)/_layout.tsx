@@ -1,26 +1,31 @@
-import { Tabs, router, Redirect } from "expo-router";
+import React from "react";
+import { Tabs, Redirect } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { Pressable } from "react-native";
-import { useAuth } from "@clerk/clerk-expo";
-
+import { useAuth, useUser } from "@clerk/clerk-expo";
+import { Text } from "react-native";
 export const LogoutButton = () => {
   const { signOut } = useAuth();
 
-  const doLogout = () => {
-    signOut();
+  const doLogout = async () => {
+    try {
+      await signOut();
+    } catch (error) {
+      console.error("Error al cerrar sesión:", error);
+    }
   };
 
   return (
-    <Pressable onPress={doLogout} style={{ marginRight: 10 }}>
-      <Ionicons name="log-out-outline" size={24} color={"#fff"} />
+    <Pressable onPress={(event) => doLogout()} style={{ marginRight: 10 }}>
+      <Ionicons name="exit-outline" size={24} color={"#fff"} />
     </Pressable>
   );
 };
 
 const TabsPage = () => {
   const { isSignedIn } = useAuth();
+  const { user } = useUser();
 
-  // Redirect to the login screen if the user is not signed in.
   if (!isSignedIn) {
     return <Redirect href="/login" />;
   }
@@ -29,32 +34,29 @@ const TabsPage = () => {
     <Tabs
       screenOptions={{
         headerStyle: {
-          backgroundColor: "#6c47ff",
+          backgroundColor: "#268E00",
         },
         headerTintColor: "#fff",
+        headerLeft: () => (
+          <Text
+            style={{ color: "#fff", paddingHorizontal: 10, fontWeight: "bold" }}
+          >
+            Bienvenido, {user?.firstName}
+          </Text>
+        ),
+        headerRight: () => <LogoutButton />,
       }}
     >
       <Tabs.Screen
         name="home"
         options={{
-          headerTitle: "Home",
+          headerTitle: "", // Establecer el título como cadena vacía
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home-outline" size={size} color={color} />
           ),
           tabBarLabel: "Home",
         }}
       />
-      {/* <Tabs.Screen
-        name="profile"
-        options={{
-          headerTitle: "My Profile",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="person-outline" size={size} color={color} />
-          ),
-          tabBarLabel: "My Profile",
-          headerRight: () => <LogoutButton />,
-        }}
-      /> */}
     </Tabs>
   );
 };

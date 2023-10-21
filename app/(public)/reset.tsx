@@ -1,8 +1,9 @@
-import { View, StyleSheet, TextInput, Button } from "react-native";
+import { View, StyleSheet, TextInput, Button, Text } from "react-native";
 import React, { useState } from "react";
 import { Stack } from "expo-router";
 import { useSignIn } from "@clerk/clerk-expo";
 import RegularButton from "../../components/Buttons/RegularButton";
+import RegularText from "../../components/Texts/RegularText";
 
 const PwReset = () => {
   const [emailAddress, setEmailAddress] = useState("");
@@ -54,6 +55,7 @@ const PwReset = () => {
 
       {!successfulCreation && (
         <>
+          <RegularText>Recuperarcion Contraseña</RegularText>
           <TextInput
             autoCapitalize="none"
             placeholder="tuemail@gmail.com"
