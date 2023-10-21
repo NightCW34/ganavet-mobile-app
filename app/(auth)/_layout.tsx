@@ -2,8 +2,9 @@ import React from "react";
 import { Tabs, Redirect } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { Pressable } from "react-native";
-import { useAuth, useUser } from "@clerk/clerk-expo";
+import { useAuth ,useUser} from "@clerk/clerk-expo";
 import { Text } from "react-native";
+
 export const LogoutButton = () => {
   const { signOut } = useAuth();
 
@@ -45,9 +46,32 @@ const TabsPage = () => {
           </Text>
         ),
         headerRight: () => <LogoutButton />,
-      }}
+      }} 
     >
+
       <Tabs.Screen
+        name="screens/Venta"
+        options={{
+          headerTitle: "Venta",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="stats-chart-outline" size={size} color={color} />
+          ),
+          tabBarLabel: "Venta",
+        }}
+        redirect={!isSignedIn}
+      />
+       <Tabs.Screen
+        name="screens/Consultas"
+        options={{
+          headerTitle: "Consultas",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="chatbox-ellipses-outline" size={size} color={color} />
+          ),
+          tabBarLabel: "Consultas",
+        }}
+        redirect={!isSignedIn}
+      />
+            <Tabs.Screen
         name="home"
         options={{
           headerTitle: "", // Establecer el título como cadena vacía
@@ -58,7 +82,32 @@ const TabsPage = () => {
           tabBarLabel: "Home",
         }}
       />
+       <Tabs.Screen
+        name="screens/RegistroBovino"
+        options={{
+          headerTitle: "RegistroBovino",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="document-outline" size={size} color={color} />
+          ),
+          tabBarLabel: "RegistroBovino",
+        }}
+        redirect={!isSignedIn}
+      />
+        <Tabs.Screen
+          name="screens/ListAnimales"
+          options={{
+            headerTitle: "ListAnimales",
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="list-outline" size={size} color={color} />
+            ),
+            tabBarLabel: "ListAnimales",
+          }}
+          
+        />
+     
     </Tabs>
+
+
   );
 };
 
