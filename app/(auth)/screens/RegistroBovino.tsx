@@ -65,7 +65,7 @@ const RegistroBovino = () => {
             placeholder="Foto de Animal"
             value={foto}
             onChangeText={setFoto}
-            icon="account"
+            icon="camera"
         />
         <StyledTextInput
             label="Numero de Arete"
@@ -79,14 +79,14 @@ const RegistroBovino = () => {
             placeholder="Fecha de Nacimiento"
             value={fechaNacimiento}
             onChangeText={setFechaNacimiento}
-            icon="account"
+            icon="calendar"
         />
         <StyledTextInput
             label="Sexo"
             placeholder="Sexo"
             value={sexo}
             onChangeText={setSexo}
-            icon="account"
+            icon="filter-variant-plus"
         />
      
         <StyledTextInput
@@ -94,7 +94,7 @@ const RegistroBovino = () => {
             placeholder="Registro de Vacunas"
             value={registroVacunas}
             onChangeText={setRegistroVacunas}
-            icon="account"
+            icon="library-shelves"
         />
         <StyledTextInput
             label="Peso"
@@ -115,21 +115,21 @@ const RegistroBovino = () => {
             placeholder="Estado Reproductivo"
             value={estadoReproductivo}
             onChangeText={setEstadoReproductivo}
-            icon="account"
+            icon="history"
         />
         <StyledTextInput
             label="Raza Animal"
             placeholder="Raza Animal"
             value={razaAnimal}
             onChangeText={setRazaAnimal}
-            icon="account"
+            icon="guy-fawkes-mask"
         />
         <StyledTextInput
             label="Categoria Animal"
             placeholder="Categoria Animal"
             value={categoriaAnimal}
             onChangeText={setCategoriaAnimal}
-            icon="account"
+            icon="library-shelves"
         />
         <Button title="Enviar" onPress={handleSubmit} />
     </ScrollView>
