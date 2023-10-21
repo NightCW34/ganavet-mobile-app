@@ -2,11 +2,12 @@
 import React from "react";
 import { View, FlatList } from "react-native";
 import ButtonComponent from "../Buttons/ButtonCards";
+import { useNavigate } from "react-router-dom";
 
 interface ButtonData {
   key: string;
   label: string;
-  imageSource: any; // Agrega la propiedad imageSource al tipo ButtonData
+  imageSource: any;
 }
 
 interface HorizontalButtonScrollProps {
@@ -16,6 +17,8 @@ interface HorizontalButtonScrollProps {
 const HorizontalButtonScroll: React.FC<HorizontalButtonScrollProps> = ({
   items,
 }) => {
+  const navigate = useNavigate();
+
   return (
     <FlatList
       data={items}
@@ -25,10 +28,8 @@ const HorizontalButtonScroll: React.FC<HorizontalButtonScrollProps> = ({
       renderItem={({ item }) => (
         <ButtonComponent
           label={item.label}
-          imageSource={item.imageSource} // Pasa la fuente de imagen desde item
-          onPress={() => {
-            /* Manejar la acción del botón */
-          }}
+          imageSource={item.imageSource}
+          onPress={() => {}}
         />
       )}
     />
