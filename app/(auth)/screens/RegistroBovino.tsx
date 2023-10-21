@@ -131,7 +131,7 @@ const RegistroBovino = () => {
             onChangeText={setCategoriaAnimal}
             icon="library-shelves"
         />
-        <Button title="Enviar" onPress={handleSubmit} />
+        <Button title="Registrar Animal" onPress={handleSubmit} />
     </ScrollView>
     );
 }
@@ -140,6 +140,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
+        paddingTop: 0,
     },
     contentContainer: {
         paddingBottom: 20, // Agrega un margen inferior para dar espacio al botón
