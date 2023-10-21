@@ -3,7 +3,8 @@ import { Tabs, Redirect } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { Pressable } from "react-native";
 import { useAuth ,useUser} from "@clerk/clerk-expo";
-import Venta from "./screens/Venta";
+import { Text } from "react-native";
+
 export const LogoutButton = () => {
   const { signOut } = useAuth();
 
