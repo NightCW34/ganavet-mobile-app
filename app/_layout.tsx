@@ -8,7 +8,9 @@ import {
 import { ClerkProvider, useAuth } from "@clerk/clerk-expo";
 import * as SecureStore from "expo-secure-store";
 import { useEffect } from "react";
+import { LogBox } from "react-native";
 
+LogBox.ignoreAllLogs();
 const CLERK_PUBLISHABLE_KEY = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
 const tokenCache = {

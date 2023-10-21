@@ -27,7 +27,7 @@ const Home = () => {
         </Link>
         <Link href={"/menu/nutritionAnimal"} asChild>
           <ButtonCardComponent
-            label={"Crear concentrado"}
+            label={"Alimento"}
             imageSource={require("../../assets/images/icon-2.png")}
             onPress={() => {}}
           />

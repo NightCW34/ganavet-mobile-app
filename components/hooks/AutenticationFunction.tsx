@@ -15,7 +15,7 @@ export const useOAuthSignIn = (
       const { createdSessionId } = await startOAuthFlow();
 
       if (createdSessionId) {
-        return <Redirect href="/home" />;
+        return <Redirect href="/(auth)/home" />;
       } else {
         alert("El inicio de sesión no fue exitoso");
       }
