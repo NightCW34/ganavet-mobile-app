@@ -2,6 +2,7 @@ import { Redirect, Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { Pressable } from "react-native";
 import { useAuth } from "@clerk/clerk-expo";
+import Venta from "./screens/Venta";
 
 export const LogoutButton = () => {
   const { signOut } = useAuth();
@@ -53,8 +54,40 @@ const TabsPage = () => {
         }}
         redirect={!isSignedIn}
       />
-      
-
+       <Tabs.Screen
+        name="Consulta"
+        options={{
+          headerTitle: "Venta",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="star" size={size} color={color} />
+          ),
+          tabBarLabel: "Venta",
+        }}
+        redirect={!isSignedIn}
+      />
+       <Tabs.Screen
+        name="RegistroBovino"
+        options={{
+          headerTitle: "RegistroBovino",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="star" size={size} color={color} />
+          ),
+          tabBarLabel: "RegistroBovino",
+        }}
+        redirect={!isSignedIn}
+      />
+        <Tabs.Screen
+          name="RegistroVenta"
+          options={{
+            headerTitle: "RegistroVenta",
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="star" size={size} color={color} />
+            ),
+            tabBarLabel: "RegistroVenta",
+          }}
+          
+        />
+     
     </Tabs>
 
 
