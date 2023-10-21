@@ -113,7 +113,7 @@ const RegistroBovino = () => {
                 onChangeText={setEdad}
                 icon="account"
             />
-            <Button title="Registrar" onPress={handleSubmit} />
+            <Button  title="Registrar" onPress={handleSubmit}  />
         </ScrollView>
     );
 }
@@ -122,6 +122,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
+        paddingTop: 0,
+        
     },
     contentContainer: {
         paddingBottom: 20, // Agrega un margen inferior para dar espacio al botón
