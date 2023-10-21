@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <SafeAreaView>
       <View style={{ flexDirection: "row", marginBottom: 3 }}>
-        <Link href={"/screens/menuSecond"} asChild>
+        <Link href={"/menu/menuSecond"} asChild>
           <ButtonCardComponent
             label={"Sugerencias"}
             imageSource={require("../../assets/images/icon-1.png")}
