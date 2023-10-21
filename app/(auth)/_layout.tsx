@@ -2,7 +2,7 @@ import React from "react";
 import { Tabs, Redirect } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { Pressable } from "react-native";
-import { useAuth ,useUser} from "@clerk/clerk-expo";
+import { useAuth, useUser } from "@clerk/clerk-expo";
 import { Text } from "react-native";
 
 export const LogoutButton = () => {
@@ -46,32 +46,33 @@ const TabsPage = () => {
           </Text>
         ),
         headerRight: () => <LogoutButton />,
-      }} 
+      }}
     >
-
       <Tabs.Screen
-        name="screens/Venta"
+        name="Venta"
         options={{
-          headerTitle: "Venta",
+          headerTitle: "",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="stats-chart-outline" size={size} color={color} />
           ),
           tabBarLabel: "Venta",
         }}
-        redirect={!isSignedIn}
       />
-       <Tabs.Screen
-        name="screens/Consultas"
+      <Tabs.Screen
+        name="Consultas"
         options={{
-          headerTitle: "Consultas",
+          headerTitle: "",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="chatbox-ellipses-outline" size={size} color={color} />
+            <Ionicons
+              name="chatbox-ellipses-outline"
+              size={size}
+              color={color}
+            />
           ),
           tabBarLabel: "Consultas",
         }}
-        redirect={!isSignedIn}
       />
-            <Tabs.Screen
+      <Tabs.Screen
         name="home"
         options={{
           headerTitle: "", // Establecer el título como cadena vacía
@@ -82,32 +83,27 @@ const TabsPage = () => {
           tabBarLabel: "Home",
         }}
       />
-       <Tabs.Screen
-        name="screens/RegistroBovino"
+      <Tabs.Screen
+        name="RegistroBovino"
         options={{
-          headerTitle: "RegistroBovino",
+          headerTitle: "",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="document-outline" size={size} color={color} />
           ),
           tabBarLabel: "RegistroBovino",
         }}
-        redirect={!isSignedIn}
       />
-        <Tabs.Screen
-          name="screens/ListAnimales"
-          options={{
-            headerTitle: "ListAnimales",
-            tabBarIcon: ({ color, size }) => (
-              <Ionicons name="list-outline" size={size} color={color} />
-            ),
-            tabBarLabel: "ListAnimales",
-          }}
-          
-        />
-     
+      <Tabs.Screen
+        name="ListAnimales"
+        options={{
+          headerTitle: "",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="list-outline" size={size} color={color} />
+          ),
+          tabBarLabel: "ListAnimales",
+        }}
+      />
     </Tabs>
-
-
   );
 };
 

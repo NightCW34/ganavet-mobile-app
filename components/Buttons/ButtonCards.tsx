@@ -8,7 +8,7 @@ interface ButtonProps {
   onPress: () => void;
 }
 
-const ButtonComponent: React.FC<ButtonProps> = ({
+const ButtonCardComponent: React.FC<ButtonProps> = ({
   label,
   imageSource,
   onPress,
@@ -49,4 +49,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ButtonComponent;
+export default ButtonCardComponent;

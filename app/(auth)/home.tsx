@@ -1,52 +1,46 @@
-import { View, Text, Dimensions } from "react-native";
+import { View, Dimensions } from "react-native";
 import React from "react";
 import { useUser } from "@clerk/clerk-expo";
 
 import { LineChart } from "react-native-chart-kit";
 import { SafeAreaView } from "react-native-safe-area-context";
-import HorizontalButtonScroll from "../../components/Elements/HorizontalSlide";
 import RegularText from "../../components/Texts/RegularText";
+import ButtonCardComponent from "../../components/Buttons/ButtonCards";
 
-import Consultas from "./screens/Consultas";
-
+import { Link, useRouter } from "expo-router";
 
 const Home = () => {
   const { user } = useUser();
-
-  const buttonData = [
-    {
-      key: "1",
-      label: "Sugerencias",
-      imageSource: require("../../assets/images/icon-1.png"), // Proporciona la fuente de imagen para el botón 1
-    },
-    {
-      key: "2",
-      label: "Calendario",
-      imageSource: require("../../assets/images/icon-2.png"), // Proporciona la fuente de imagen para el botón 2
-    },
-    {
-      key: "3",
-      label: "Botón 3",
-      imageSource: require("../../assets/images/icon-3.png"), // Proporciona la fuente de imagen para el botón 3
-    },
-    {
-      key: "4",
-      label: "Botón 4",
-      imageSource: require("../../assets/images/icon-3.png"), // Proporciona la fuente de imagen para el botón 3
-    },
-    {
-      key: "5",
-      label: "Botón 5",
-      imageSource: require("../../assets/images/icon-3.png"), // Proporciona la fuente de imagen para el botón 3
-    },
-  ];
+  const router = useRouter();
 
   return (
     <SafeAreaView>
-      <HorizontalButtonScroll items={buttonData} />
+      <View style={{ flexDirection: "row", marginBottom: 3 }}>
+        <Link href={"/screens/milk"} asChild>
+          <ButtonCardComponent
+            label={"Sugerencias"}
+            imageSource={require("../../assets/images/icon-1.png")}
+            onPress={() => {}}
+          />
+        </Link>
+        <Link href={"/screens/nutrition"} asChild>
+          <ButtonCardComponent
+            label={"Concentrado"}
+            imageSource={require("../../assets/images/icon-2.png")}
+            onPress={() => {}}
+          />
+        </Link>
+        <Link href={"/screens/bovineVaccination"} asChild>
+          <ButtonCardComponent
+            label={"Calendario"}
+            imageSource={require("../../assets/images/icon-3.png")}
+            onPress={() => {}}
+          />
+        </Link>
+      </View>
       <View style={{ alignSelf: "center" }}>
         <RegularText style={{ fontFamily: "InriaSans_700Bold" }}>
-          Promedio Ganancia de Peso
+          Promedio Ganancia de Peso semanal
         </RegularText>
       </View>
 
