@@ -44,29 +44,29 @@ const TabsPage = () => {
         redirect={!isSignedIn}
       />
       <Tabs.Screen
-        name="Venta"
+        name="screens/Venta"
         options={{
           headerTitle: "Venta",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="star" size={size} color={color} />
+            <Ionicons name="home-outline" size={size} color={color} />
           ),
           tabBarLabel: "Venta",
         }}
         redirect={!isSignedIn}
       />
        <Tabs.Screen
-        name="Consulta"
+        name="screens/Consultas"
         options={{
-          headerTitle: "Venta",
+          headerTitle: "Consultas",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="star" size={size} color={color} />
           ),
-          tabBarLabel: "Venta",
+          tabBarLabel: "Consultas",
         }}
         redirect={!isSignedIn}
       />
        <Tabs.Screen
-        name="RegistroBovino"
+        name="screens/RegistroBovino"
         options={{
           headerTitle: "RegistroBovino",
           tabBarIcon: ({ color, size }) => (
@@ -77,13 +77,13 @@ const TabsPage = () => {
         redirect={!isSignedIn}
       />
         <Tabs.Screen
-          name="RegistroVenta"
+          name="screens/ListAnimales"
           options={{
-            headerTitle: "RegistroVenta",
+            headerTitle: "ListAnimales",
             tabBarIcon: ({ color, size }) => (
               <Ionicons name="star" size={size} color={color} />
             ),
-            tabBarLabel: "RegistroVenta",
+            tabBarLabel: "ListAnimales",
           }}
           
         />
