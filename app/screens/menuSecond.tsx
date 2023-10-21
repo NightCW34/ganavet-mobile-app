@@ -37,19 +37,17 @@ export const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     flexWrap: "wrap",
-    justifyContent: "center",
-    alignContent: "center",
+    justifyContent: "space-between", // Cambio de "center" a "space-between"
+    paddingHorizontal: 16, // Agregar un relleno horizontal
+    paddingTop: 16, // Agregar un relleno superior
   },
   buttonContainer: {
-    width: "50%", // Para dos botones en una fila
-    alignItems: "center",
-    marginBottom: 16, // Espacio entre filas
+    width: "48%", // Para dos botones en una fila, con espacio entre ellos
   },
   button: {
-    backgroundColor: "white",
+    backgroundColor: "#3498db", // Cambio de "white" a un color de fondo azul
     borderRadius: 10,
-    width: "80%",
-    height: 100,
+    height: 150, // Aumentar la altura para hacer los botones más grandes
     justifyContent: "center",
     alignItems: "center",
     shadowColor: "#000",
@@ -62,11 +60,13 @@ export const styles = StyleSheet.create({
     elevation: 5,
   },
   icon: {
-    fontSize: 40,
-    color: "#333",
+    fontSize: 60, // Aumentar el tamaño del ícono
+    color: "#fff", // Cambio de "#333" a blanco
   },
   text: {
     textAlign: "center",
+    fontSize: 16, // Tamaño de fuente del texto
+    color: "#fff", // Cambio de "#333" a blanco
   },
 });
 
